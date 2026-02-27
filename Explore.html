@@ -1,0 +1,608 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Radhika & Nihal</title>
+
+    <!-- REQUIRED FOR MOBILE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- GOOGLE FONTS (ZOLA-LIKE) -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+    <!-- ICON FOR MOBILE MENU -->
+    <!-- <script src="https://kit.fontawesome.com/a2d9d5a64b.js" crossorigin="anonymous"></script> -->
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            border: 2px solid #e2d3b8;
+            margin: 20px;
+        }
+
+
+        .blessing {
+            text-align: center;
+            font-family: 'Libre Baskerville', serif;
+            font-size: 15px;
+            color: #8a6a3d;        /* soft gold/brown */
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .blessing {
+            font-style: italic;
+        }
+
+
+        body {
+            font-family: 'Libre Baskerville', serif;
+            color: #2b2b2b;
+        }
+
+        /* MAIN BACKGROUND (ZOLA STYLE) */
+        .container {
+            padding-top: 10px;
+            min-height: 100vh;
+            background-color: #f6f3ee;
+            background-image: url("images/texture.jpg"); /* optional */
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* TOP DATE BAR */
+        .date {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            justify-content: start;
+            font-size: 14px;
+            gap: 20px;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        /* COUPLE NAMES */
+        .names {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0 40px;
+            letter-spacing: 5px;
+            word-spacing: 4px;
+        }
+
+        .names h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(42px, 9vw, 72px);
+            font-weight: normal;
+        }
+
+        /* DESKTOP MENU */
+        .nav {
+            max-width: 1100px;
+            margin: auto;
+            border-top: 1px solid #c7b38a;
+            border-bottom: 1px solid #c7b38a;
+            padding: 18px 0;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 36px;
+            font-size: 16px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #2b2b2b;
+        }
+
+        .menu a:hover {
+            text-decoration: underline;
+            text-underline-offset: 6px;
+        }
+
+        /* CONTENT SECTION */
+        .content {
+            max-width: 1100px;
+            margin: 80px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .text-box {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* IMAGE PLACEHOLDER */
+        .image-box {
+            width: 100%;
+            height: 380px;
+            border: 1px solid #c7b38a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* MOBILE MENU ICON */
+        .menu-icon {
+            display: none;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        /* MOBILE MENU */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 20px;
+            background: #f6f3ee;
+            padding: 30px;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            border: 1px solid #c7b38a;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: #2b2b2b;
+            font-size: 16px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+
+            .date {
+                font-size: 13px;
+                display: flex;
+                justify-content: center;
+            }
+
+            .nav {
+                border: none;
+                padding: 0;
+                position: relative;
+            }
+
+            .menu {
+                display: none;
+            }
+
+            .menu-icon {
+                font-size: 26px;
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    padding: 15px;
+    z-index: 10000;
+}
+
+            .content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+
+        /* SAME LINE AS MENU */
+        .divider {
+            height: 1px;
+            background-color: #d8c2a3;
+            /* margin: 10px 0; */
+        }
+
+        .divider.bottom {
+            margin-top: 80px;
+        }
+
+        /* FOOTER CREDIT */
+        .site-credit {
+            text-align: center;
+            padding: 12px 0 12px;
+            font-family: 'Libre Baskerville', serif;
+            font-size: 18px;
+            color: #777;
+        }
+
+        .site-credit a {
+            color: maroon;
+            text-decoration: none;
+
+        }
+
+        .site-credit a:hover {
+            text-decoration: underline;
+        }
+
+
+        .text-box p
+        {
+            font-size: 18px;
+            font-family: cursive;
+        }
+
+        .menu a:hover,
+        .menu a.active {
+            text-decoration: underline;
+            text-underline-offset: 6px;
+        }
+        
+
+
+        /* PAGE HEADING */
+.page-heading {
+    max-width: 900px;
+    margin: 80px auto 60px;
+    text-align: center;
+}
+
+.page-heading h1 {
+    font-size: 42px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.page-heading p {
+    font-size: 16px;
+    color: #777;
+}
+
+/* GRID */
+.explore-grid {
+    max-width: 1100px;
+    margin: 0 auto 100px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+}
+
+/* CARD */
+.explore-card {
+    border: 1px solid #d8c7a3;
+    background: transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.explore-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.06);
+}
+
+/* IMAGE BOX */
+.explore-image {
+    width: 100%;
+    height: 240px;              /* 👈 height yaha control hoti hai */
+    overflow: hidden;
+    padding: 3px;
+    border-radius: 3px solid #e2d3b8;
+    border-bottom: 1px solid #e2d3b8;
+}
+
+.explore-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* 🔥 MAGIC LINE */
+    object-position: center;    /* center se crop */
+    display: block;
+}
+
+/* CONTENT */
+.explore-content {
+    padding: 28px 26px 32px;
+}
+
+.explore-content h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.explore-tagline {
+    font-style: italic;
+    font-family: cursive;
+    color: #999;
+    margin-bottom: 14px;
+}
+
+.explore-content p {
+    font-size: 15px;
+    line-height: 1.2;
+    color: #444;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .explore-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+
+.map-link {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #8a6a3d;          /* same soft gold tone */
+    text-decoration: none;
+    font-style: italic;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.map-link:hover {
+    text-decoration: underline;
+    color: #6f5230;
+}
+
+.travel-time {
+    font-size: 10px;
+    color: #888;
+    margin-top: 6px;
+    font-style: italic;
+}
+
+
+            </style>
+</head>
+
+<body>
+
+
+
+    <audio id="bg-music" loop>
+  <source src="music/song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+window.addEventListener("load", function () {
+  const music = document.getElementById("bg-music");
+
+  document.body.addEventListener("click", function () {
+    music.play().catch(function(error){
+      console.log("Autoplay blocked:", error);
+    });
+  }, { once: true });
+});
+</script>
+
+
+<div class="container">
+
+
+    <div class="blessing">
+        जय श्री कृष्णा 🙏🏻
+    </div>
+
+
+    <!-- DATE -->
+      <div class="date">
+        <span>April 19 - 20, 2026 - Bhopal, M.P.</span>
+        <div id="music-start">
+            Tap Here 🎵
+        </div>
+    </div>
+
+    <!-- NAMES -->
+    <div class="names">
+        <h1>Radhika & Nihal</h1>
+    </div>
+
+    <!-- NAV -->
+    <div class="nav">
+        <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+
+        <ul class="menu">
+            <li><a href="index.html">Welcome</a></li>
+            <li><a href="Busy.html">What will keep you busy</a></li>
+            <li><a href="Getting.html">Getting there</a></li>
+            <li><a href="Explore.html" class="active">Things to explore</a></li>
+            <li><a href="Family.html">Family</a></li>
+            <li><a href="Made.html">Made By</a></li>
+        </ul>
+
+        <!-- MOBILE MENU -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Welcome</a>
+            <a href="Busy.html">What will keep you busy</a>
+            <a href="Getting.html">Getting there</a>
+            <a href="Explore.html" class="active">Things to explore</a>
+            <a href="Family.html" class="active">Family</a>
+            <a href="Made.html">Made By</a>
+        </div>
+    </div>
+
+
+
+    <!-- PAGE HEADING -->
+<section class="page-heading">
+    <h1>Things to Explore Around Bhopal</h1>
+    <p>A little time, a few places, and memories worth carrying back</p>
+</section>
+
+<!-- EXPLORE CARDS -->
+<section class="explore-grid">
+
+    <!-- CARD 1 -->
+    <div class="explore-card">
+        <div class="explore-image">
+            <img src="images/03.jpg" alt="">
+        </div>
+        <div class="explore-content">
+            <h3>Chintamani Ganesh Ji, Vidisha</h3>
+            <p class="explore-tagline"> -> Where faith meets our roots</p>
+            <p>
+                A deeply revered temple close to our hearts, Chintamani Ganesh Ji
+                reflects the spiritual roots that ground our family. Though a little
+                away from the city, it offers peace, devotion, and a sense of calm
+                that stays with you.
+            </p>
+
+            <a 
+  href="https://www.google.com/maps/search/Chintamani+Ganesh+Temple+Vidisha"
+  target="_blank"
+  class="map-link"
+>
+  📍 View on Map
+</a>
+<p class="travel-time">Approx. 1.5 hours drive from the venue</p>
+
+
+        </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="explore-card">
+        <div class="explore-image">
+            <img src="images/04.jpg" alt="">
+        </div>
+        <div class="explore-content">
+            <h3>Bhojpur Temple</h3>
+            <p class="explore-tagline">-> History carved in stone</p>
+            <p>
+                An 11th-century architectural marvel dedicated to Lord Shiva,
+                Bhojpur Temple stands as a symbol of Bhopal’s rich heritage.
+                The massive Shiva Lingam and serene surroundings make it a
+                must-visit.
+            </p>
+
+            <a 
+  href="https://www.google.com/maps/search/Bhojpur+Temple+Bhopal"
+  target="_blank"
+  class="map-link"
+>
+  📍 View on Map
+</a>
+<p class="travel-time">Approx. 45 minutes drive</p>
+
+        </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="explore-card">
+        <div class="explore-image">
+            <img src="images/05.jpg" alt="">
+        </div>
+        <div class="explore-content">
+            <h3>DB Mall, Bhopal</h3>
+            <p class="explore-tagline">-> Shopping, food & a little chill time</p>
+            <p>
+                One of the largest malls in Central India, DB Mall is perfect for
+                shopping, movies, cafés, and quick breaks between wedding
+                celebrations.
+            </p>
+
+            <a 
+  href="https://www.google.com/maps/search/DB+Mall+Bhopal"
+  target="_blank"
+  class="map-link"
+>
+  📍 View on Map
+</a>
+<p class="travel-time">Approx. 20 minutes drive</p>
+
+        </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="explore-card">
+        <div class="explore-image">
+            <img src="images/06.jpg" alt="">
+        </div>
+        <div class="explore-content">
+            <h3>Upper Lake (Bhojtal)</h3>
+            <p class="explore-tagline">-> The soul of the City of Lakes</p>
+            <p>
+                Calm waters, open skies, and beautiful sunsets — Upper Lake
+                captures the true essence of Bhopal. A perfect spot to unwind
+                and soak in the city’s natural charm.
+            </p>
+
+            <a 
+  href="https://www.google.com/maps/search/Upper+Lake+Bhopal"
+  target="_blank"
+  class="map-link"
+>
+  📍 View on Map
+</a>
+<p class="travel-time">Approx. 25 minutes drive</p>
+
+        </div>
+    </div>
+
+</section>
+
+
+
+
+
+
+    <!-- BOTTOM DIVIDER LINE -->
+<div class="divider bottom"></div>
+
+<!-- SITE CREDIT -->
+<footer class="site-credit">
+    <p>
+        Thoughtfully created by
+        <a href="https://www.instagram.com/_udayrathi_/" target="_blank">
+            Uday Rathi
+        </a>
+    </p>
+</footer>
+
+
+
+</div>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+</script>
+
+<script>
+    const weddingDate = new Date("April 19, 2026 00:00:00").getTime();
+
+    setInterval(() => {
+        const now = new Date().getTime();
+        const diff = weddingDate - now;
+
+        if (diff < 0) return;
+
+        document.getElementById("days").innerText =
+            Math.floor(diff / (1000 * 60 * 60 * 24));
+
+        document.getElementById("hours").innerText =
+            Math.floor((diff / (1000 * 60 * 60)) % 24);
+
+        document.getElementById("minutes").innerText =
+            Math.floor((diff / (1000 * 60)) % 60);
+
+        document.getElementById("seconds").innerText =
+            Math.floor((diff / 1000) % 60);
+    }, 1000);
+</script>
+
+
+
+</body>
+</html> -->

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Radhika & Nihal</title>
+
+    <!-- REQUIRED FOR MOBILE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- GOOGLE FONTS (ZOLA-LIKE) -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+    <!-- ICON FOR MOBILE MENU -->
+    <!-- <script src="https://kit.fontawesome.com/a2d9d5a64b.js" crossorigin="anonymous"></script> -->
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            border: 2px solid #e2d3b8;
+            margin: 20px;
+        }
+
+
+        .blessing {
+            text-align: center;
+            font-family: 'Libre Baskerville', serif;
+            font-size: 15px;
+            color: #8a6a3d;        /* soft gold/brown */
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .blessing {
+            font-style: italic;
+        }
+
+
+        body {
+            font-family: 'Libre Baskerville', serif;
+            color: #2b2b2b;
+        }
+
+        /* MAIN BACKGROUND (ZOLA STYLE) */
+        .container {
+            padding-top: 10px;
+            min-height: 100vh;
+            background-color: #f6f3ee;
+            background-image: url("images/texture.jpg"); /* optional */
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* TOP DATE BAR */
+        .date {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            justify-content: start;
+            font-size: 14px;
+            gap: 20px;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        /* COUPLE NAMES */
+        .names {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0 40px;
+            letter-spacing: 5px;
+            word-spacing: 4px;
+        }
+
+        .names h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(42px, 9vw, 72px);
+            font-weight: normal;
+        }
+
+        /* DESKTOP MENU */
+        .nav {
+            max-width: 1100px;
+            margin: auto;
+            border-top: 1px solid #c7b38a;
+            border-bottom: 1px solid #c7b38a;
+            padding: 18px 0;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 36px;
+            font-size: 16px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #2b2b2b;
+        }
+
+        .menu a:hover {
+            text-decoration: underline;
+            text-underline-offset: 6px;
+        }
+
+        /* CONTENT SECTION */
+        .content {
+            max-width: 1100px;
+            margin: 80px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .text-box {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* IMAGE PLACEHOLDER */
+        .image-box {
+            width: 100%;
+            height: 380px;
+            border: 1px solid #c7b38a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* MOBILE MENU ICON */
+        .menu-icon {
+            display: none;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        /* MOBILE MENU */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 20px;
+            background: #f6f3ee;
+            padding: 30px;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            border: 1px solid #c7b38a;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: #2b2b2b;
+            font-size: 16px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+
+            .date {
+                font-size: 13px;
+                display: flex;
+                justify-content: center;
+            }
+
+            .nav {
+                border: none;
+                padding: 0;
+                position: relative;
+            }
+
+            .menu {
+                display: none;
+            }
+
+            .menu-icon {
+                font-size: 26px;
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    padding: 15px;
+    z-index: 10000;
+}
+
+            .content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        .hero {
+    min-height: 20vh;
+    /* background-color: #7a1025; deep maroon */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    /* color: #f5c79a; */
+    
+}
+
+        /* NAMES */
+        .hero-names h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(40px, 8vw, 80px);
+            font-weight: normal;
+            margin-bottom: 30px;
+        }
+
+        /* DATE */
+        .hero-date p {
+            font-family: cursive;
+            font-size: clamp(18px, 3vw, 35px);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        /* LOCATION */
+        .hero-location p {
+            font-family: cursive;
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+
+        /* COUNTDOWN */
+        .hero-countdown {
+            color: #999;
+            font-family: cursive;
+            font-size: clamp(14px, 2.5vw, 22px);
+            letter-spacing: 1px;
+        }
+
+
+            .hero-intro 
+            {
+                color: #444;
+                font-size: 35px;
+                margin-top: 100px;
+                margin-bottom: 30px;
+                /* font-family: 'Allura', cursive; */
+                font-family: 'Great Vibes';
+                letter-spacing: 2px;
+            }
+
+        .hero-story {
+            max-width: 750px;              /* VERY IMPORTANT */
+            margin: 0 auto;
+            padding: 40px 20px 60px;
+            text-align: center;
+        }
+
+        .hero-story p {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 18px;
+            line-height: 1.2;
+            color: #2b2b2b;
+            margin-bottom: 35px;
+        }
+
+        /* last paragraph little emphasis */
+        .hero-story .heart {
+            margin-top: 5px;
+        }
+
+        /* MOBILE TUNING */
+        @media (max-width: 600px) {
+            .hero-story {
+                max-width: 90%;
+            }
+
+            .hero-story p {
+                font-size: 16px;
+                line-height: 1.9;
+            }
+        }
+
+        /* SAME LINE AS MENU */
+        .divider {
+            height: 1px;
+            background-color: #d8c2a3;
+            /* margin: 10px 0; */
+        }
+
+        .divider.bottom {
+            margin-top: 80px;
+        }
+
+        /* FOOTER CREDIT */
+        .site-credit {
+            text-align: center;
+            padding: 12px 0 12px;
+            font-family: 'Libre Baskerville', serif;
+            font-size: 18px;
+            color: #777;
+        }
+
+        .site-credit a {
+            color: maroon;
+            text-decoration: none;
+
+        }
+
+        .site-credit a:hover {
+            text-decoration: underline;
+        }
+
+
+        .hotel-card {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    background: #f9f6f1;
+    border: 1px solid #d8c7a3;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.05);
+}
+
+/* IMAGE */
+.hotel-image {
+    height: 280px;
+    width: 100%;
+    border: 3px solid #c7b38a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 14px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+/* TEXT SIDE */
+.hotel-name {
+    font-size: 28px;
+    margin-bottom: 6px;
+    word-spacing: 3px;
+}
+
+.hotel-location {
+    font-size: 15px;
+    color: #777;
+    margin-bottom: 14px;
+}
+
+/* MAP LINK */
+.map-link {
+    display: inline-block;
+    margin-bottom: 22px;
+    color: #8a6a3d;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.map-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* DESCRIPTION */
+.hotel-desc {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 26px;
+}
+
+/* DISTANCE ROWS */
+.travel-info {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.travel-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed #d8c7a3;
+}
+
+.travel-row span {
+    color: #555;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .hotel-card {
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+    }
+
+    .travel-row {
+        flex-direction: column;
+        gap: 4px;
+    }
+    .hotel-details {
+    text-align: center;
+}
+
+}
+
+.page-heading {
+    max-width: 900px;
+    margin: 80px auto 40px;
+    text-align: center;
+}
+
+.page-heading h1 {
+    font-size: 35px;
+    font-weight: 200;
+    margin-bottom: 10px;
+}
+
+.page-heading p {
+    font-size: 16px;
+    color: #777;
+    letter-spacing: 0.3px;
+}
+
+ .menu a:hover,
+        .menu a.active {
+            text-decoration: underline;
+            text-underline-offset: 6px;
+        }
+
+        .travel-note {
+            display: flex;
+            flex-direction: column;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 15px;
+    color: #666;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+.hotel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+            </style>
+</head>
+
+<body>
+
+    <audio id="bg-music" loop>
+  <source src="music/song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+window.addEventListener("load", function () {
+  const music = document.getElementById("bg-music");
+
+  document.body.addEventListener("click", function () {
+    music.play().catch(function(error){
+      console.log("Autoplay blocked:", error);
+    });
+  }, { once: true });
+});
+</script>
+
+
+
+
+<div class="container">
+
+
+    <div class="blessing">
+        जय श्री कृष्णा 🙏🏻
+    </div>
+
+
+    <!-- DATE -->
+      <div class="date">
+        <span>April 19 - 20, 2026 - Bhopal, M.P.</span>
+        <div id="music-start">
+            Tap Here 🎵
+        </div>
+    </div>
+
+    <!-- NAMES -->
+    <div class="names">
+        <h1>Radhika & Nihal</h1>
+    </div>
+
+    <!-- NAV -->
+    <div class="nav">
+        <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+
+        <ul class="menu">
+            <li><a href="index.html">Welcome</a></li>
+            <li><a href="Busy.html">What will keep you busy</a></li>
+            <li><a href="Getting.html" class="active">Getting there</a></li>
+            <li><a href="Explore.html">Things to explore</a></li>
+            <li><a href="Family.html">Family</a></li>
+            <li><a href="Made.html">Made By</a></li>
+        </ul>
+
+        <!-- MOBILE MENU -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Welcome</a>
+            <a href="Busy.html">What will keep you busy</a>
+            <a href="Getting.html" class="active">Getting there</a>
+            <a href="Explore.html">Things to explore</a>
+            <a href="Family.html">Family</a>
+            <a href="Made.html">Made By</a>
+        </div>
+
+    </div>
+
+    <section class="page-heading">
+        <h1>Our Stay & Arrival Details</h1>
+        <p>Everything you need to know about the venue and how to reach us</p>
+    </section>
+
+    <section class="hotel-card">
+
+    <!-- IMAGE -->
+    <div class="hotel-image">
+        <img src="images/Screenshot 2026-02-11 120438.png" alt="">
+    </div>
+
+    <!-- DETAILS -->
+    <div class="hotel-details">
+
+        <h3 class="hotel-name">
+            Hotel  Yasodha Privilege
+        </h3>
+
+        <a class="map-link"
+           href="https://www.google.com/maps/search/Yasodha+Privilege+Garden+near+Minal+Residence+Bhopal"
+           target="_blank">
+            📍 View on Google Maps
+        </a>
+
+        <p class="hotel-desc">
+            All wedding celebrations and guest accommodation
+            have been arranged here to ensure a comfortable,
+            warm and memorable stay.
+        </p>
+
+        <div class="travel-info">
+            <div class="travel-row">
+                ✈️ Raja Bhoj International Airport
+                <span>~40 km • ~40 min</span>
+            </div>
+
+            <div class="travel-row">
+                🚆 Bhopal Junction
+                <span>~7–8 km • ~20 min</span>
+            </div>
+
+            <div class="travel-row">
+                🚆 Rani Kamlapati Station
+                <span>~8 km • ~22 min</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<p class="travel-note">
+        Transportation assistance will be available if needed.
+        Please feel free to reach out for any help.
+        <span>Mob.No:- Ritika 9039182324 & Uday 7974621188</span>
+    </p>
+
+
+
+    <!-- BOTTOM DIVIDER LINE -->
+<div class="divider bottom"></div>
+
+<!-- SITE CREDIT -->
+<footer class="site-credit">
+    <p>
+        Thoughtfully created by
+        <a href="https://www.instagram.com/_udayrathi_/" target="_blank">
+            Uday Rathi
+        </a>
+    </p>
+</footer>
+
+
+
+</div>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+</script>
+
+<script>
+    const weddingDate = new Date("April 19, 2026 00:00:00").getTime();
+
+    setInterval(() => {
+        const now = new Date().getTime();
+        const diff = weddingDate - now;
+
+        if (diff < 0) return;
+
+        document.getElementById("days").innerText =
+            Math.floor(diff / (1000 * 60 * 60 * 24));
+
+        document.getElementById("hours").innerText =
+            Math.floor((diff / (1000 * 60 * 60)) % 24);
+
+        document.getElementById("minutes").innerText =
+            Math.floor((diff / (1000 * 60)) % 60);
+
+        document.getElementById("seconds").innerText =
+            Math.floor((diff / 1000) % 60);
+    }, 1000);
+</script>
+
+
+
+</body>
+</html>

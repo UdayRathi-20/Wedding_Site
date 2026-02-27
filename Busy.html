@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Radhika & Nihal</title>
+
+    <!-- REQUIRED FOR MOBILE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- GOOGLE FONTS (ZOLA-LIKE) -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+    <!-- ICON FOR MOBILE MENU -->
+    <!-- <script src="https://kit.fontawesome.com/a2d9d5a64b.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            border: 2px solid #e2d3b8;
+            margin: 20px;
+        }
+
+
+        .blessing {
+            text-align: center;
+            font-family: 'Libre Baskerville', serif;
+            font-size: 15px;
+            color: #8a6a3d;        /* soft gold/brown */
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .blessing {
+            font-style: italic;
+        }
+
+
+        body {
+            font-family: 'Libre Baskerville', serif;
+            color: #2b2b2b;
+        }
+
+        /* MAIN BACKGROUND (ZOLA STYLE) */
+        .container {
+            padding-top: 10px;
+            min-height: 100vh;
+            background-color: #f6f3ee;
+            background-image: url("images/texture.jpg"); /* optional */
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* TOP DATE BAR */
+        .date {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            justify-content: start;
+            font-size: 14px;
+            gap: 20px;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        /* COUPLE NAMES */
+        .names {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0 40px;
+            letter-spacing: 5px;
+            word-spacing: 4px;
+        }
+
+        .names h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(42px, 9vw, 72px);
+            font-weight: normal;
+        }
+
+        /* DESKTOP MENU */
+        .nav {
+            max-width: 1100px;
+            margin: auto;
+            border-top: 1px solid #c7b38a;
+            border-bottom: 1px solid #c7b38a;
+            padding: 18px 0;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 36px;
+            font-size: 16px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #2b2b2b;
+        }
+
+        .menu a:hover {
+            text-decoration: underline;
+            text-underline-offset: 6px;
+        }
+
+        /* CONTENT SECTION */
+        .content {
+            max-width: 1100px;
+            margin: 80px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .text-box {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* IMAGE PLACEHOLDER */
+        .image-box {
+            width: 100%;
+            height: 380px;
+            border: 1px solid #c7b38a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* MOBILE MENU ICON */
+        .menu-icon {
+            display: none;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        /* MOBILE MENU */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 20px;
+            background: #f6f3ee;
+            padding: 30px;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            border: 1px solid #c7b38a;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: #2b2b2b;
+            font-size: 16px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+
+            .date {
+                font-size: 13px;
+                display: flex;
+                justify-content: center;
+            }
+
+            .nav {
+                border: none;
+                padding: 0;
+                position: relative;
+            }
+
+            .menu {
+                display: none;
+            }
+
+            .menu-icon {
+                font-size: 26px;    
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    padding: 15px;
+    z-index: 10000;
+}
+
+            .content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        .hero {
+    min-height: 20vh;
+    /* background-color: #7a1025; deep maroon */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    /* color: #f5c79a; */
+    
+}
+
+/* NAMES */
+.hero-names h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(40px, 8vw, 80px);
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+/* DATE */
+.hero-date p {
+    font-family: cursive;
+    font-size: clamp(18px, 3vw, 35px);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+/* LOCATION */
+.hero-location p {
+    font-family: cursive;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+/* COUNTDOWN */
+.hero-countdown {
+    color: #999;
+    font-family: cursive;
+    font-size: clamp(14px, 2.5vw, 22px);
+    letter-spacing: 1px;
+}
+
+
+    .hero-intro 
+    {
+        color: #444;
+        font-size: 35px;
+        margin-top: 100px;
+        margin-bottom: 30px;
+        /* font-family: 'Allura', cursive; */
+        font-family: 'Great Vibes';
+        letter-spacing: 2px;
+    }
+
+.hero-story {
+    max-width: 750px;              /* VERY IMPORTANT */
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+    text-align: center;
+}
+
+.hero-story p {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 18px;
+    line-height: 1.2;
+    color: #2b2b2b;
+    margin-bottom: 35px;
+}
+
+/* last paragraph little emphasis */
+.hero-story .heart {
+    margin-top: 5px;
+}
+
+/* MOBILE TUNING */
+@media (max-width: 600px) {
+    .hero-story {
+        max-width: 90%;
+    }
+
+    .hero-story p {
+        font-size: 16px;
+        line-height: 1.9;
+    }
+}
+
+/* SAME LINE AS MENU */
+.divider {
+    height: 1px;
+    background-color: #d8c2a3;
+    /* margin: 10px 0; */
+}
+
+.divider.bottom {
+    margin-top: 80px;
+}
+
+/* FOOTER CREDIT */
+.site-credit {
+    text-align: center;
+    padding: 12px 0 12px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 18px;
+    color: #777;
+}
+
+.site-credit a {
+    color: maroon;
+    text-decoration: none;
+
+}
+
+.site-credit a:hover {
+    text-decoration: underline;
+}
+
+
+.text-box p
+{
+    font-size: 18px;
+    font-family: cursive;
+}
+
+.menu a:hover,
+.menu a.active {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+        
+
+        /* PAGE HEADING */
+        .page-heading {
+            text-align: center;
+            margin-bottom: 60px;
+            margin-top: 90px;
+        }
+
+        .page-heading h1 {
+            font-size: 42px;
+            font-weight: 500;
+        }
+
+        .page-heading p {
+            font-size: 16px;
+            color: #777;
+            margin-top: 30px;
+        }
+
+        /* EVENT CARD */
+        .event-card {
+            max-width: 900px;
+            margin: 0 auto 40px;
+            padding: 32px;
+            border: 1px solid #d8c7a3;
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            
+        }
+
+        .event-card:hover {
+            background-color: #f6f3ee;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+        }
+
+        .event-left h2 {
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        .event-left p {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 4px;
+        }
+
+        .event-right h3 {
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+
+        .tagline {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 14px;
+        }
+
+        /* COLOR BARS */
+        .color-bars {
+            display: flex;
+            gap: 8px;
+        }
+
+        .color-bars span {
+            width: 28px;
+            height: 6px;
+            border-radius: 3px;
+        }
+
+        /* COLORS */
+        .lime { background: #b7c95b; }
+        .mustard { background: #d4a017; }
+        .soft-orange { background: #f2a65a; }
+
+        .sky { background: #a7c7e7; }
+        .ocean { background: #4f86c6; }
+        .bluebird { background: #3f6fb5; }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .event-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .color-bars {
+                justify-content: center;
+            }
+
+            .menu-links {
+                flex-wrap: wrap;
+                gap: 14px;
+            }
+
+            .menu-links .divider {
+                display: none;
+            }
+        }
+
+
+        .event-text {
+            min-height: 70px;
+        }
+
+
+        .event-inner {
+            display: flex;
+            width: 100%;
+            align-items: stretch;   /* 🔑 KEY LINE */
+            gap: 40px;
+        }
+
+        .event-left,
+        .event-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+            @media (max-width: 480px){
+    body{
+        margin: 6px;
+    }
+}
+
+
+
+    </style>
+</head>
+
+<body>
+
+
+<audio id="bg-music" loop>
+  <source src="music/song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+window.addEventListener("load", function () {
+  const music = document.getElementById("bg-music");
+
+  document.body.addEventListener("click", function () {
+    music.play().catch(function(error){
+      console.log("Autoplay blocked:", error);
+    });
+  }, { once: true });
+});
+</script>
+
+
+<div class="container">
+
+
+    <div class="blessing">
+        जय श्री कृष्णा 🙏🏻
+    </div>
+
+
+    <!-- DATE -->
+   <div class="date">
+        <span>April 19 - 20, 2026 - Bhopal, M.P.</span>
+        <div id="music-start">
+            Tap Here 🎵
+        </div>
+    </div>
+    <!-- NAMES -->
+    <div class="names">
+        <h1>Radhika & Nihal</h1>
+    </div>
+
+    <!-- NAV -->
+    <div class="nav">
+        <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+
+        <ul class="menu">
+            <li><a href="index.html">Welcome</a></li>
+            <li><a href="Busy.html" class="active">What will keep you busy</a></li>
+            <li><a href="Getting.html">Getting there</a></li>
+            <li><a href="Explore.html">Things to explore</a></li>
+            <li><a href="Family.html">Family</a></li>
+            <li><a href="Made.html">Made By</a></li>
+        </ul>
+
+        <!-- MOBILE MENU -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Welcome</a>
+            <a href="Busy.html">What will keep you busy</a>
+            <a href="Getting.html">Getting there</a>
+            <a href="Explore.html">Things to explore</a>
+            <a href="Family.html">Family</a>
+            <a href="Made.html">Made By</a>
+        </div>
+    </div>
+
+   
+
+    <!-- HEADING -->
+    <section class="page-heading">
+        <h1>What Will Keep You Busy</h1>
+        <p>A few days of celebration, color & togetherness</p>
+    </section>
+
+    <!-- MEHENDI -->
+        <!-- <section class="event-card">
+        <div class="event-left">
+            <h2>Mehendi</h2>
+            <p>18 April • 4:00 PM</p>
+            <p>Home</p>
+        </div>
+
+        <div class="event-right">
+    <div class="event-text">
+        <h3>Emerald Elegance</h3>
+        <p class="tagline">Hands full of mehendi, heart full of joy</p>
+    </div>
+
+    <div class="color-bars">
+        <span class="lime"></span>
+        <span class="mustard"></span>
+        <span class="soft-orange"></span>
+    </div>
+</div>
+
+    </section> -->
+
+    <!-- HALDI -->
+    <section class="event-card">
+    <div class="event-left">
+        <h2>Haldi</h2>
+        <p>19 April • 08:30 AM</p>
+        <p>Hotel • Pool Side</p>
+    </div>
+
+    <div class="event-right">
+        <div class="event-text">
+            <h3>Sky Kissed</h3>
+            <p class="tagline">A beginning filled with love & laughter</p>
+        </div>
+
+        <div class="color-bars">
+            <span class="sky"></span>
+            <span class="ocean"></span>
+            <span class="bluebird"></span>
+        </div>
+    </div>
+</section>
+
+
+    <section class="event-card">
+    <div class="event-left">
+        <h2>Myra</h2>
+        <p>18 April • 02:30 PM</p>
+        <p>Hotel • Hall</p>
+    </div>
+
+    <div class="event-right">
+        <div class="event-text">
+            <h3>Tradition & Togetherness</h3>
+            <p class="tagline">
+                A ceremony filled with blessings and family warmth.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+        <section class="event-card">
+    <div class="event-left">
+        <h2>Tilak</h2>
+        <p>19 April • 04:00 PM</p>
+        <p>Hotel • Hall</p>
+    </div>
+
+    <div class="event-right">
+        <div class="event-text">
+            <h3>The First Promise</h3>
+            <p class="tagline">
+                A sacred beginning marked with honor and love.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- SANGEET -->
+    <section class="event-card">
+    <div class="event-left">
+        <h2>Sangeet</h2>
+        <p>19 April • 6:30 PM</p>
+        <p>Hotel • Garden</p>
+    </div>
+
+    <div class="event-right">
+        <div class="event-text">
+            <h3>An Evening of Grace & Groove</h3>
+            <p class="tagline">Royal Indian fusion with a touch of glam</p>
+        </div>
+    </div>
+</section>
+
+
+    <!-- WEDDING -->
+    <section class="event-card">
+    <div class="event-left">
+        <h2>Baarat & Phere</h2>
+        <p>20 April • 11:30 AM</p>
+    </div>
+
+    <div class="event-right">
+        <div class="event-text">
+            <h3>Tying the Knot</h3>
+            <p class="tagline">A promise today, a lifetime of tomorrows</p>
+        </div>
+    </div>
+</section>
+
+
+
+    <section class="event-card">
+    <div class="event-left">
+        <h2>Vidai</h2>
+        <p>20 April • 4:00 PM</p>
+    </div>
+
+    <div class="event-right">
+        <div class="event-text">
+            <h3>From Memories to New Beginnings</h3>
+<p class="tagline">
+    A tender goodbye that carries memories of a lifetime
+    and steps into a future full of love.
+</p>
+
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- BOTTOM DIVIDER LINE -->
+<div class="divider bottom"></div>
+
+<!-- SITE CREDIT -->
+<footer class="site-credit">
+    <p>
+        Thoughtfully created by
+        <a href="https://www.instagram.com/_udayrathi_/" target="_blank">
+            Uday Rathi
+        </a>
+    </p>
+</footer>
+
+
+
+</div>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+</script>
+
+<script>
+    const weddingDate = new Date("April 19, 2026 00:00:00").getTime();
+
+    setInterval(() => {
+        const now = new Date().getTime();
+        const diff = weddingDate - now;
+
+        if (diff < 0) return;
+
+        document.getElementById("days").innerText =
+            Math.floor(diff / (1000 * 60 * 60 * 24));
+
+        document.getElementById("hours").innerText =
+            Math.floor((diff / (1000 * 60 * 60)) % 24);
+
+        document.getElementById("minutes").innerText =
+            Math.floor((diff / (1000 * 60)) % 60);
+
+        document.getElementById("seconds").innerText =
+            Math.floor((diff / 1000) % 60);
+    }, 1000);
+</script>
+
+
+
+</body>
+</html>
